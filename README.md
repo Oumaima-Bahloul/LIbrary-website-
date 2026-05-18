@@ -1,5 +1,5 @@
-# LIbrary-website-LaFleur
-*Librairie La Fleur** is a sophisticated, fictional digital library and bookstore conceptualized to seamlessly answer all customer needs in the modern literary space. Designed as a dual-purpose platform, it balances a refined, elegant user interface for patrons exploring the catalog with a robust, secure administrative toolkit built for seamless inventory and database management.
+# Website-Library-LaFleur
+*Librairie La Fleur* is a sophisticated, fictional digital library and bookstore conceptualized to seamlessly answer all customer needs in the modern literary space. Designed as a dual-purpose platform, it balances a refined, elegant user interface for patrons exploring the catalog with a robust, secure administrative toolkit built for seamless inventory and database management.
 
 <img width="1918" height="907" alt="image" src="https://github.com/user-attachments/assets/a24b876c-d75b-48bd-959e-a909bcfe8ff1" />
 
