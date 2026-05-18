@@ -1,0 +1,398 @@
+/* Import  bootstrap icons used in the website */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+/* Import Google Fonts used in the website */
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap");
+
+/* CSS variables (global colors & fonts) */
+:root {
+  --lg-font: "Kaisei Tokumin", serif; /* Font for titles */
+  --sm-font: "Poppins", sans-serif; /* Font for body text */
+  --pink: #dc7dba; /* Main pink theme color */
+}
+
+/* Default font for the whole page */
+/* Update this section in your style.css */
+html,
+body {
+  height: 100%; /* Important: Tell the browser the page is full height */
+}
+
+body {
+  display: flex; /* Turns the body into a flex container */
+  flex-direction: column; /* Stacks Nav, Main, and Footer vertically */
+  margin: 0;
+  font-family: var(--sm-font);
+}
+/*  BUTTON STYLES  */
+/* Pink background utility class (used for badges, labels, etc.) */
+.bg-pink {
+  background-color: var(--pink) !important; /* Forces pink background */
+  color: #dc7dba; /* Text color */
+} /*the heart button is going to be pink*/
+
+/* Default button style except navbar buttons */
+.btn:not(.nav-btns button) {
+  background-color: #fff; /* White background */
+  color: rgb(85, 85, 85); /* Dark grey text */
+  padding: 10px 28px; /* Inner spacing */
+  border-radius: 25px; /* Rounded corners */
+  border: 1px solid rgb(85, 85, 85); /* Border color */
+}
+
+/* Hover effect for buttons */
+.btn:not(.nav-btns button):hover {
+  background-color: var(--pink); /* Pink background on hover */
+  color: #fff; /* White text */
+  border-color: var(--pink); /* Pink border */
+}
+
+/* TEXT COLOR */
+/* Override Bootstrap primary color with pink */
+.text-primary {
+  color: var(--pink) !important;
+}
+
+/* navbar */
+/* Adds a soft shadow under the navbar */
+.navbar {
+  -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+/* Logo size inside navbar */
+.navbar-brand img {
+  width: 30px;
+}
+/* Brand text styling */
+.navbar-brand span {
+  letter-spacing: 2px; /* Space between letters */
+  font-family: var(--lg-font); /* Title font */
+}
+/* Navbar link hover effect */
+.nav-link:hover {
+  color: var(--pink) !important;
+} /* when i run my cursor on top it turns pink */
+/* Bottom border for navbar items (mobile view) */
+.nav-item {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+/*HEADER ; carousel */
+#header h1 {
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+/* Buttons inside carousel slides */
+#header .carousel-item .btn {
+  background-color: transparent !important; /* Transparent button */
+  color: white !important; /* White text */
+  border: 2px solid #fff !important; /* White border */
+  padding: 10px 30px;
+  font-weight: 500;
+  transition: all 0.1s ease; /* Smooth hover animation */
+}
+
+/* Hover effect for carousel buttons */
+#header .carousel-item .btn:hover {
+  color: var(--pink) !important; /* Pink text */
+  border-color: var(--pink) !important; /* Pink borders */
+  background-color: pink;
+}
+
+/*TITLES*/
+
+/* Vertical pink bar before section titles */
+.title h2::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: var(--pink);
+  left: -20px;
+  transform: translateY(-20%);
+}
+
+/*  COLLECTION / ISOTOPE  */
+
+/* Active filter button style */
+.active-filter-btn {
+  background-color: var(--pink) !important;
+  color: #fff !important;
+  border-color: var(--pink) !important;
+}
+
+/* Hover effect for filter buttons */
+.filter-button-group .btn:hover {
+  color: #fff !important;
+}
+
+/* Sale badge inside product images */
+.collection-img span {
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/*  SPECIAL CATEGORIES  */
+
+/* Position badge inside special images */
+.special-img span {
+  top: 20px;
+  right: 20px;
+}
+
+/* Smaller buttons in special section */
+.special-list .btn {
+  padding: 8px 20px !important;
+}
+
+/* Smooth zoom animation on images */
+.special-img img {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Zoom image on hover */
+.special-img:hover img {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* OFFCANVAS */
+
+/* Section headings inside offcanvas */
+/* Color for off cnavas */
+.menu-heading {
+  color: #dc7dba; /* pink heading color*/
+  font-weight: 700;
+  padding: 10px 16px;
+  margin-top: 10px;
+}
+
+/* Navigation links inside offcanvas */
+.bookstore-menu .nav-link {
+  color: #2c3e50; /* colro text */
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f8f9fa; /*color light separation */
+  transition: background 0.2s;
+}
+
+/* Hover effect for offcanvas links */
+.bookstore-menu .nav-link:hover {
+  background-color: #fffaf0;
+  color: #ff8c00;
+}
+
+/* Arrow icon styling  */
+.bi-chevron-right {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+/*  Offcanvas header border style */
+.offcanvas-header {
+  border-bottom: 4px solid #ff8c00;
+}
+
+/*  OFFERS*/
+/* Background image for offers section */
+#offers {
+  background: url(../images/offer_img.jpg) center/cover no-repeat;
+}
+
+/* Minimum height for offers row */
+#offers .row {
+  min-height: 60vh;
+}
+
+/* Offer text styles */
+.offers-content span {
+  font-size: 28px;
+}
+.offers-content h2 {
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+
+/* Remove button border in offers section */
+.offers-content .btn {
+  border-color: transparent !important;
+}
+
+/* newsletter */
+#newsletter {
+  background-color: rgba(179, 179, 179, 0.05);
+}
+#newsletter p {
+  max-width: 600px;
+}
+#newsletter .input-group {
+  max-width: 500px;
+}
+#newsletter .form-control {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#newsletter .btn {
+  background-color: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+}
+#newsletter .btn:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+/* footer */
+footer .brand {
+  font-family: var(--lg-font);
+  letter-spacing: 2px;
+}
+footer a {
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--pink) !important;
+}
+
+/* media queries */
+/* Desktop view adjustments */
+@media (min-width: 992px) {
+  .nav-item {
+    border-bottom: none; /* Remove borders on large screens */
+  }
+}
+/*for my favs carousel*/
+/* Section Title Styling */
+.section-title {
+  background-color: #3b71ca;
+  color: white;
+  padding: 5px 15px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Card Styling */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps buttons aligned at the bottom */
+  height: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.book-card img {
+  max-height: 250px; /* Keeps all book covers same height */
+  width: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+  color: rgb(185, 26, 52);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn-cart {
+  background: none;
+  border: 1px solid rgb(85, 85, 85);
+  color: rgb(85, 85, 85);
+  padding: 8px 22px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+/* Basket icon 
+.btn-cart::before {
+  content: "\F181";
+  font-family: "Bootstrap Icons" !important;
+  margin-right: 8px;
+  vertical-align: middle;
+}*/
+
+.btn-cart:hover {
+  background-color: var(--pink); /* Pink background on hover */
+  color: #fff; /* White text */
+  border-color: var(--pink); /* Pink border */
+}
+
+/* Controls visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.2); /* Makes arrows visible on white */
+  border-radius: 50%;
+  padding: 20px;
+}
+
+/*-----------------------book catalogue page styling-------------------------*/
+.catalogue-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+#search {
+  background-image: url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?_gl=1*uaevzx*_ga*MTg1NDE5NDMwMS4xNzY3MDEwNTY3*_ga_8JE65Q40S6*czE3NjcwMTA1NjckbzEkZzEkdDE3NjcwMTA1NzEkajU2JGwwJGgw");
+  background-size: cover;
+  background-position: top;
+  margin-top: 100px;
+}
+
+#search .input-group {
+  max-width: 500px;
+}
+#search .form-control {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#search .btn {
+  background-color: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+}
+#search .btn:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+/*body {
+  padding-top: 110px; /* adjust if navbar height changes so they dont get on top  of each other  */
+/*my select menu*/
+.selection {
+  border-radius: 9000px;
+  color: #290202; /* White text */
+  border-color: var(--pink); /* Pink border */
+  padding: 10px;
+  padding-inline: 10px;
+}
+
+.selection:hover {
+  border-color: var(--pink); /* Pink border */
+}
+/*row cards books*/
+.card img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

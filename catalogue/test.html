@@ -1,0 +1,91 @@
+<!-- CART LINK -->
+<a href="../manage_cart.php?action=add&id=" class="btn btn-cart border-0">
+  <i class="bi bi-basket"></i>
+</a>
+
+<!-- WISHLIST LINK -->
+<a href="../toggle_wishlist.php?id=" class="btn btn-outline-danger border-0">
+  <i class="bi bi-heart"></i>
+</a>
+
+<?php if (session_status() === PHP_SESSION_NONE) { session_start(); }
+include_once 'api/db.php'; $cart_count = 0; $wish_count = 0; if
+(isset($_SESSION['user_id'])) { $uid = $_SESSION['user_id']; // Count Cart Items
+(Sum of quantities) $c_stmt = $pdo->prepare("SELECT SUM(quantity) FROM cart
+WHERE user_id = ?"); $c_stmt->execute([$uid]); $cart_count =
+$c_stmt->fetchColumn() ?: 0; // Count Wishlist Items $w_stmt =
+$pdo->prepare("SELECT COUNT(*) FROM wishlist WHERE user_id = ?");
+$w_stmt->execute([$uid]); $wish_count = $w_stmt->fetchColumn() ?: 0; } ?>
+
+<!-- Icons on the right (cart, favorites, search) -->
+<!----dynamic cart -->
+<div class="order-lg-2 nav-btns">
+  <a
+    href="../cart.php"
+    class="btn position-relative border-0"
+    style="color: inherit"
+  >
+    <i class="fa fa-shopping-cart"></i>
+    <span
+      id="cart-badge"
+      class="position-absolute top-0 start-100 translate-middle badge bg-primary"
+      ><?php echo $cart_count; ?></span
+    >
+  </a>
+  <!--dynamic wishlist -->
+  <a
+    href="../wishlist.php"
+    class="btn position-relative border-0"
+    style="color: inherit"
+  >
+    <i class="fa fa-heart"></i>
+    <span
+      class="position-absolute top-0 start-100 translate-middle badge bg-pink"
+    >
+      <?php echo $wish_count; ?>
+    </span>
+  </a>
+  <?php if (isset($_SESSION['user_id'])): ?>
+  <div class="dropdown d-inline-block">
+    <button
+      class="btn dropdown-toggle border-0 shadow-none p-2"
+      type="button"
+      data-bs-toggle="dropdown"
+    >
+      <i class="fa fa-user"></i>
+      <span class="ms-1 small d-none d-md-inline-block fw-bold"
+        ><?php echo htmlspecialchars($_SESSION['user_name']); ?></span
+      >
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+      <?php if ($_SESSION['user_role'] === 'admin'): ?>
+      <li>
+        <a class="dropdown-item py-2" href="../admin/index.php"
+          ><i class="bi bi-speedometer2 me-2"></i> Admin Dashboard</a
+        >
+      </li>
+      <li>
+        <hr class="dropdown-divider" />
+      </li>
+      <?php endif; ?>
+      <li>
+        <a class="dropdown-item py-2 text-danger" href="../logout.php"
+          ><i class="bi bi-box-arrow-right me-2"></i> Logout</a
+        >
+      </li>
+    </ul>
+  </div>
+  <?php else: ?>
+  <a
+    href="../login.php"
+    class="btn border-0 shadow-none"
+    title="../Login/Register"
+  >
+    <i class="fa fa-user"></i>
+  </a>
+  <?php endif; ?>
+
+  <button type="button" class="btn position-relative border-0">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
